@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Blog Post!</h1>
+    
+    <form method='post'>
+      <label>
+           Title:
+          <input type="text" name='title' />
+      </label>
+      <label>
+           Body:
+          <textarea rows="5" cols="50" name='body'></textarea>
+      </label>
+      <input type="submit" value='Add Post' />
+  </form>
+
+  <hr />
+
+ 
+
+      <ul>
+          {% for blog in blogs %}
+         <li>Title :<a href="/blog?id={{blog.id}}">{{blog.title}}</a></li>
+         <li>Content : {{blog.body}}</li>
+            
+          {% endfor %}
+       </ul>
+
+ {% endblock %}
