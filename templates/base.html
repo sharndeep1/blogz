@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
   <head>
-      <title>{{title}}</title>
-       <style>
+    <title>{{title}}</title>
+    <style>
            body{
     background-color:cyan;
     }
@@ -12,15 +12,22 @@
     label{display:block;}
     input{display:block;}
     textarea{display:block;}
-</style>           
-    </head>
-<body>
-<nav>
- <a href="/blog">Blog</a> |
- <a href="/newpost">New Post</a>
-</nav>
+    .error { color: red; }
+    </style>           
+  </head>
+ <body>
+    <nav>
+    <a href="/">Home</a>
+     <a href="/blog">AllPosts</a> |
+     <a href="/newpost">New Post</a>
+     <a href='/login'>login</a>
+     <a href='/logout'>logout</a>
+     <a href='/signup'>Create Account</a>
+    </nav>
+ 
+    
     {% block content %}
     {% endblock %}
 
-</body>
+ </body>
 </html>

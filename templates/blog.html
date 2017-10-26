@@ -2,14 +2,23 @@
 
 {% block content %}
   <h1>Blog Post!</h1>
+   
+    {% for user in users %}
+   <ul>
+          
+      {% for blog in blogs%}
+       {% if user.id==blog.owner_id %}
+       
+       <li><h2> <a href="blog?id={{blog.id}}">{{blog.title}}</a></h2></li>
+       <li>Content : {{blog.body}}</li>
+       <li><i>Writter By : <a href="/blog?user={{user.id}}">{{user.username}}</i></a></li>
+
+       {% endif %}
+      {% endfor %}
+      
+  </ul>
+    {% endfor %}
     
+{% endblock %}
 
-      <ul>
-          {% for blog in blogs %}
-         <li>Title : <a href="blog?id={{blog.id}}">{{blog.title}}</a></li>
-         <li>Content : {{blog.body}}</li>
-            
-          {% endfor %}
-       </ul>
 
- {% endblock %}
